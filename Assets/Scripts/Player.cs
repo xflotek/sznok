@@ -19,8 +19,13 @@ public class Player : MonoBehaviour
     private Vector2 m_VecMvmt;
     private Weapon m_Weapon;
     private bool m_ShouldFire;
+
+    public float m_LastDirection;
+    public GameObject pickable;
+    
     private Animator m_Animator;
     private float m_Moving;    
+
 
     public static UnityEvent onPlayerDeath;
 
@@ -62,6 +67,18 @@ public class Player : MonoBehaviour
             m_ShouldFire = true;
         }
 
+        if (Keyboard.current.qKey.ReadValue() > 0)
+        {
+            if (pickable != null)
+            {
+                if (pickable.GetComponent<Pickable>().PickUp())
+                {
+                    pickable = null;
+                }
+            }
+        }
+
+
         if (m_VecMvmt.x > 0) {
             transform.localScale = new Vector3(
                 m_DefaultScale.x * m_MoveRight.x,
@@ -77,6 +94,7 @@ public class Player : MonoBehaviour
                 m_DefaultScale.z * m_MoveLeft.z
             );
         }
+
 
     }
 

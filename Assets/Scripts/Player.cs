@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private Weapon m_Weapon;
     private bool m_ShouldFire;
     public float m_LastDirection;
+    public GameObject pickable;
 
     public static UnityEvent onPlayerDeath;
 
@@ -44,6 +45,16 @@ public class Player : MonoBehaviour
         m_VecMvmt = m_MoveAction.ReadValue<Vector2>();
         if (Keyboard.current.fKey.ReadValue() > 0) {
             m_ShouldFire = true;
+        }
+        if (Keyboard.current.qKey.ReadValue() > 0)
+        {
+            if (pickable != null)
+            {
+                if (pickable.GetComponent<Pickable>().PickUp())
+                {
+                    pickable = null;
+                }
+            }
         }
     }
 

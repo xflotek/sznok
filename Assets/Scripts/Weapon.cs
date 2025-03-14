@@ -23,8 +23,10 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float m_WeaponDamage = 1f;
 
-    public void Fire(Transform origin) {
-        if (!m_CanFire) return;
+    public bool Fire(Transform origin) {
+        if (!m_CanFire) {
+            return false;
+        }
         onPlayerWeaponFire.Invoke();
 
         GameObject b = Instantiate(
@@ -41,6 +43,8 @@ public class Weapon : MonoBehaviour
 
         m_CanFire = false;
         m_CooldownTimer = 0;
+
+        return true;
     }
     void Start()
     {

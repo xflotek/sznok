@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a435fb22dc097fd4eb404a3b7739e4cc
+guid: f2c15cfaf9aa9614ab2783aa2548472c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,7 +102,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 240
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,6 +147,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -155,19 +168,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 307
-        width: 208
-        height: 193
+        y: 5
+        width: 239
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a941e5e82b62b3d90800000000000000
-      internalID: -7117052237794372454
+      spriteID: 87c733bee643fbc47aa5514227f7d35c
+      internalID: 1688839031
       vertices: []
       indices: 
       edges: []
@@ -176,20 +189,20 @@ TextureImporter:
       name: throwing_1
       rect:
         serializedVersion: 2
-        x: 63
-        y: 80
-        width: 143
-        height: 234
+        x: 239
+        y: 5
+        width: 239
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dee1134c95065a020800000000000000
-      internalID: 2352392319030861549
+      spriteID: 2f6fa1928dab08446a5410ec4ef877b5
+      internalID: 1833128888
       vertices: []
       indices: 
       edges: []
@@ -198,20 +211,20 @@ TextureImporter:
       name: throwing_2
       rect:
         serializedVersion: 2
-        x: 130
-        y: 244
-        width: 90
-        height: 83
+        x: 478
+        y: 5
+        width: 239
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c448ac0ef70575ef0800000000000000
-      internalID: -119538354939591604
+      spriteID: c8a8c4d5c1f66b14ca202b2fd87d0d41
+      internalID: 833630001
       vertices: []
       indices: 
       edges: []
@@ -220,20 +233,20 @@ TextureImporter:
       name: throwing_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 281
-        width: 23
-        height: 29
+        x: 717
+        y: 5
+        width: 239
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c00f017041c4de010800000000000000
-      internalID: 1219714722988879884
+      spriteID: e60af751a4866d948b7fea61014319a1
+      internalID: 1789446548
       vertices: []
       indices: 
       edges: []
@@ -242,306 +255,20 @@ TextureImporter:
       name: throwing_4
       rect:
         serializedVersion: 2
-        x: 296
-        y: 229
-        width: 150
-        height: 267
+        x: 956
+        y: 5
+        width: 301
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bec3693c7b7ad8c0800000000000000
-      internalID: -3973727947732037966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_5
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 80
-        width: 155
-        height: 346
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c42c19568742b84e0800000000000000
-      internalID: -1978447511780474292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_6
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 76
-        width: 162
-        height: 417
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 553c84520d3ad6920800000000000000
-      internalID: 2985222242390557525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_7
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 242
-        width: 126
-        height: 179
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: acd8bf41b78fafca0800000000000000
-      internalID: -5982195947491586614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_8
-      rect:
-        serializedVersion: 2
-        x: 731
-        y: 57
-        width: 227
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7628a61c4058d4750800000000000000
-      internalID: 6290830509977797223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_9
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 52
-        width: 25
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ee74017d00611210800000000000000
-      internalID: 1301927378133745385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_10
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 46
-        width: 51
-        height: 159
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 873ed91b06a16d140800000000000000
-      internalID: 4744008260080493432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_11
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 8
-        width: 105
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d78896f4f090bf5b0800000000000000
-      internalID: -5333659372328744835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_12
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 6
-        width: 240
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ecb0d7e74972f0880800000000000000
-      internalID: -8642645641169925170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_13
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 56
-        width: 55
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57207e02b6fd4eba0800000000000000
-      internalID: -6060473547327339915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_14
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 4
-        width: 212
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a905f8b1cf31f820800000000000000
-      internalID: 2950209332168690086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_15
-      rect:
-        serializedVersion: 2
-        x: 506
-        y: 57
-        width: 49
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1e15fc858a542840800000000000000
-      internalID: 5198379399534419484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_16
-      rect:
-        serializedVersion: 2
-        x: 717
-        y: 9
-        width: 239
-        height: 208
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58de2c09b9bb88740800000000000000
-      internalID: 5154576050348551557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throwing_17
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 6
-        width: 93
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b42820de174287c80800000000000000
-      internalID: -8324863839468092853
+      spriteID: 01a62599d2a5ba941a7623aa01c5c8dc
+      internalID: -978952312
       vertices: []
       indices: 
       edges: []
@@ -550,7 +277,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4d33c7c167cd77549a9a07f646ba82ee
     internalID: 0
     vertices: []
     indices: 
@@ -559,7 +286,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      throwing_0: 1688839031
+      throwing_1: 1833128888
+      throwing_2: 833630001
+      throwing_3: 1789446548
+      throwing_4: -978952312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -104,6 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {x: 0, y: 0}
   m_Speed: 0
+  m_Damage: 0
+  m_ParticleExplosionReference: {fileID: 6100883100073285981, guid: 1d8d7f157bc3730418a04ce9ae2af907, type: 3}
 --- !u!50 &4403841433320187949
 Rigidbody2D:
   serializedVersion: 5

@@ -15,14 +15,17 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float m_FireRate = 1f;
 
+    [SerializeField]
+    private float m_WeaponDamage = 1f;
+
+    [SerializeField]
+    private Vector2 m_SpawnOffset = new(0f, 1.2f);
+
     private float m_WeaponCooldown;
     private float m_CooldownTimer;
 
     public bool m_CanFire;
     public static UnityEvent onPlayerWeaponFire;
-
-    [SerializeField]
-    private float m_WeaponDamage = 1f;
 
     public bool Fire(Transform origin) {
         if (!m_CanFire) {
@@ -32,7 +35,7 @@ public class Weapon : MonoBehaviour
 
         GameObject b = Instantiate(
             m_Bullet,
-            origin.position,
+            origin.position + (Vector3) m_SpawnOffset,
             Quaternion.identity
         );
 
@@ -52,7 +55,7 @@ public class Weapon : MonoBehaviour
     {
         onPlayerWeaponFire ??= new();
         m_WeaponTarget = GameObject.FindWithTag("WeaponTarget");
-        m_WeaponCooldown = 1 / m_FireRate;
+        m_WeaponCooldown = 100 / m_FireRate;
         m_CooldownTimer = 0;
         m_CanFire = true;
     }

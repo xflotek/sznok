@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private float m_MovementSpeed = 1f;
     [SerializeField]
     private Vector3 m_DefaultScale = new(1.5f, 1.5f, 1f);
+
     private Vector3 m_MoveLeft = new(-1, 1, 1);
     private Vector3 m_MoveRight = new(1, 1, 1);
     private InputAction m_MoveAction;
@@ -19,14 +20,11 @@ public class Player : MonoBehaviour
     private Vector2 m_VecMvmt;
     private Weapon m_Weapon;
     private bool m_ShouldFire;
+    private Animator m_Animator;
 
     public float m_LastDirection;
     public GameObject pickable;
     
-    private Animator m_Animator;
-    private float m_Moving;    
-
-
     public static UnityEvent onPlayerDeath;
 
     public void ReceiveDamage(float damage) {
@@ -35,7 +33,6 @@ public class Player : MonoBehaviour
         } else {
             m_Health = 0;
             onPlayerDeath.Invoke();
-            // Debug.Log("Death");
         }
     }
 
@@ -53,7 +50,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Debug.Log(m_VecMvmt.x);
         m_VecMvmt = m_MoveAction.ReadValue<Vector2>();
 
         if (m_VecMvmt.x != 0 || m_VecMvmt.y != 0) {
@@ -78,7 +74,6 @@ public class Player : MonoBehaviour
             }
         }
 
-
         if (m_VecMvmt.x > 0) {
             transform.localScale = new Vector3(
                 m_DefaultScale.x * m_MoveRight.x,
@@ -94,17 +89,18 @@ public class Player : MonoBehaviour
                 m_DefaultScale.z * m_MoveLeft.z
             );
         }
-
-
     }
 
     void FixedUpdate()
     {
         m_Rb.linearVelocity += m_VecMvmt * m_MovementSpeed;
+
         if (m_ShouldFire) {
+            
             if (m_Weapon.Fire(transform)) {
                 m_Animator.SetTrigger("Shoot");
             }
+
             m_ShouldFire = false;
         }
     }

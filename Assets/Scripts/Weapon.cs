@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     
     [SerializeField]
     private float m_FireRate = 1f;
+
     private float m_WeaponCooldown;
     private float m_CooldownTimer;
 

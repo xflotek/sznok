@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         } else {
             m_Health = 0;
             onPlayerDeath.Invoke();
-            Debug.Log("Death");
+            // Debug.Log("Death");
         }
     }
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(m_VecMvmt.x);
+        // Debug.Log(m_VecMvmt.x);
         m_VecMvmt = m_MoveAction.ReadValue<Vector2>();
 
         if (m_VecMvmt.x != 0 || m_VecMvmt.y != 0) {
@@ -84,7 +84,9 @@ public class Player : MonoBehaviour
     {
         m_Rb.linearVelocity += m_VecMvmt * m_MovementSpeed;
         if (m_ShouldFire) {
-            m_Weapon.Fire(transform);
+            if (m_Weapon.Fire(transform)) {
+                m_Animator.SetTrigger("Shoot");
+            }
             m_ShouldFire = false;
         }
     }

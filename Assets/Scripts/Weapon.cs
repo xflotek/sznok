@@ -20,6 +20,9 @@ public class Weapon : MonoBehaviour
     public bool m_CanFire;
     public static UnityEvent onPlayerWeaponFire;
 
+    [SerializeField]
+    private float m_WeaponDamage = 1f;
+
     public void Fire(Transform origin) {
         if (!m_CanFire) return;
         onPlayerWeaponFire.Invoke();
@@ -34,6 +37,7 @@ public class Weapon : MonoBehaviour
 
         b_comp.m_Speed  = m_WeaponForce;
         b_comp.m_Target = m_WeaponTarget.transform.position;
+        b_comp.m_Damage = m_WeaponDamage;
 
         m_CanFire = false;
         m_CooldownTimer = 0;

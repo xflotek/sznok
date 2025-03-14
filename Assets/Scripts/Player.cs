@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +16,19 @@ public class Player : MonoBehaviour
     private Weapon m_Weapon;
     private bool m_ShouldFire;
     public float m_LastDirection;
-    
+
+    public static UnityEvent onPlayerDeath;
+
+    public void ReceiveDamage(float damage) {
+        if (m_Health - damage > 0) {
+            m_Health -= damage;
+        } else {
+            m_Health = 0;
+            onPlayerDeath.Invoke();
+            Debug.Log("Death");
+        }
+    }
+
     void Start()
     {
         m_MoveAction = InputSystem.actions.FindAction("move");
@@ -22,6 +36,7 @@ public class Player : MonoBehaviour
         m_Rb = GetComponent<Rigidbody2D>();
         m_Weapon = GetComponent<Weapon>();
         m_ShouldFire = false;
+        onPlayerDeath ??= new();
     }
 
     void Update()

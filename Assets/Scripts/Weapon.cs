@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
     }
     void Start()
     {
-        onPlayerWeaponFire = new();
+        onPlayerWeaponFire ??= new();
         m_WeaponTarget = GameObject.FindWithTag("WeaponTarget");
         m_WeaponCooldown = 1 / m_FireRate;
         m_CooldownTimer = 0;

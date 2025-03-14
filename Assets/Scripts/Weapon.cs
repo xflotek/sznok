@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour
 
         return true;
     }
+    
     void Start()
     {
         onPlayerWeaponFire ??= new();

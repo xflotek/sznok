@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dodging_0: -1848363448260978870
+      dodging_1: 7974005550173047540
+      dodging_2: 3984591486532968563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

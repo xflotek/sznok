@@ -61,9 +61,11 @@ public class Enemy : MonoBehaviour
         if (vel == new Vector2(0f, 0f))
         {
             anim.SetBool("Moving", false);
+            anim.SetBool("Transformed", true);
         }
         else
         {
+            anim.SetBool("Transformed", false);
             anim.SetBool("Moving", true);
         }
 

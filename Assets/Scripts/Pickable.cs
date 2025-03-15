@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pickable : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class Pickable : MonoBehaviour
 
     public bool PickUp()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
         return true;
     }
 }

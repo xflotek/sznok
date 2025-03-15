@@ -5,14 +5,14 @@ public class sceneloader : MonoBehaviour
 {
 
    public void loadstartscene(){
-    SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
-    }
+       SceneManager.LoadScene(0);
+       Time.timeScale = 1f;
+   }
 
    public void loadmenuscene(){
-    SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
-    }
+       SceneManager.LoadScene(1);
+       Time.timeScale = 1f;
+   }
 
     public void loadlvl1(){
         SceneManager.LoadScene("lvl1");

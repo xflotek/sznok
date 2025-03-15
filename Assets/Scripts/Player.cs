@@ -38,8 +38,6 @@ public class Player : MonoBehaviour
     private float m_DodgeTimer;
     private bool m_CanDodge;
 
-    private CameraController m_CameraController;
-
     public float m_LastDirection;
     public GameObject pickable;
     
@@ -84,8 +82,6 @@ public class Player : MonoBehaviour
         isInvincible = false;
         m_CanDodge = true;
         m_DodgeTimer = 0;
-        m_CameraController = GetComponent<CameraController>();
-        m_CameraFollowTimer = 0;
     }
 
     void Update()

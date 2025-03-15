@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3687352360732409659}
   - component: {fileID: 3233676993355322833}
   - component: {fileID: 8367617280316756095}
+  - component: {fileID: 7976015721330238108}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -107,9 +108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Health: 100
   m_MaxHealth: 100
-  m_MovementSpeed: 2.97
+  m_MovementSpeed: 0.1
   m_DefaultScale: {x: 1.1, y: 1.1, z: 1}
   m_HealthBar: {fileID: 0}
+  m_CameraFollowDelay: 0.1
   m_LastDirection: 0
   pickable: {fileID: 0}
   isInvincible: 0
@@ -231,6 +233,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6965387, y: 2.2290163}
   m_EdgeRadius: 0
+--- !u!114 &7976015721330238108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722647323788689781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab4f55b957bb214999c73aea62f75b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetCamera: {fileID: 0}
+  CameraPositions:
+  - {x: 0, y: 0}
+  CameraSpeed: 0.68
+  TargetPosition: {x: 0, y: 0}
 --- !u!1 &7523428880951583333
 GameObject:
   m_ObjectHideFlags: 0

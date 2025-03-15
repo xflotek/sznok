@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Bullet: {fileID: 8187410306731268409, guid: 2c7fe4eec6048274b9a0adfb0ad7f054, type: 3}
   m_WeaponForce: 30
   m_FireRate: 80
-  m_WeaponDamage: 1
+  m_WeaponDamage: 4
   m_SpawnOffset: {x: 0, y: 1.2}
   m_CanFire: 0
 --- !u!50 &3687352360732409659

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
             } else {
                 m_Health = 0;
                 onPlayerDeath.Invoke();
+                SceneManager.LoadScene(0);
             }
         }
         m_HealthBar.GetComponent<HealthBar>().curr = (int)m_Health;

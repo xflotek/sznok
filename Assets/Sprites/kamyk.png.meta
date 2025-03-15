@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kamyk_0: 2246219004629711604
+      kamyk_1: 1819585157865851016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

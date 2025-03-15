@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final lustro_0: 8450022380291275910
+      final lustro_1: 3060846333189026345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

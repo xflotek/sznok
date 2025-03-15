@@ -40,6 +40,13 @@ public class Player : MonoBehaviour
     public static UnityEvent onPlayerDeath;
 
     public bool isInvincible;
+    
+    public GameObject popup1;
+    public GameObject popup2;
+    public GameObject popup3;
+    public GameObject popup4;
+
+    public string scena = "";
 
     public void ReceiveDamage(float damage) {
         if (!isInvincible) {
@@ -147,6 +154,33 @@ public class Player : MonoBehaviour
             }
 
             m_ShouldFire = false;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        //movespeed = 0f;
+        Time.timeScale = 0f;
+
+        if (other.gameObject.CompareTag("lvl1"))
+        {
+            popup1.SetActive(true);
+            scena = "lvl1";
+        }
+        else if (other.gameObject.CompareTag("lvl2"))
+        {
+            popup2.SetActive(true);
+            scena = "lvl2";
+        }
+        else if (other.gameObject.CompareTag("lvl3"))
+        {
+            popup3.SetActive(true);
+            scena = "lvl3";
+        }
+        else if (other.gameObject.CompareTag("koniec"))
+        {
+            popup4.SetActive(true);
+            scena = "koniec";
         }
     }
 }

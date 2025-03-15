@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3729400351315375829}
   - component: {fileID: 3549442605825598644}
   - component: {fileID: 2697121207017518480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Speed: 0
   m_Damage: 0
   m_ParticleExplosionReference: {fileID: 6100883100073285981, guid: 1d8d7f157bc3730418a04ce9ae2af907, type: 3}
+  m_MaximumLifetime: 4
 --- !u!50 &4403841433320187949
 Rigidbody2D:
   serializedVersion: 5

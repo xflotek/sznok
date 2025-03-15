@@ -13,7 +13,6 @@ public class sceneloader : MonoBehaviour
     SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
-    
 
     public void loadlvl1(){
         SceneManager.LoadScene("lvl1");
@@ -23,7 +22,8 @@ public class sceneloader : MonoBehaviour
     }
     public void loadlvl3(){
         SceneManager.LoadScene("lvl3");
-    }public void loadkoniec(){
+    }
+    public void loadkoniec(){
         SceneManager.LoadScene("end");
     }
   

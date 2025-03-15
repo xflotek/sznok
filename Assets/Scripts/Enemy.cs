@@ -58,6 +58,15 @@ public class Enemy : MonoBehaviour
 
         Vector2 vel = new Vector2(Stop_vel(player_pos.x - rg_pos.x), Stop_vel(player_pos.y - rg_pos.y)).normalized;
 
+        if (vel == new Vector2(0f, 0f))
+        {
+            anim.SetBool("Moving", false);
+        }
+        else
+        {
+            anim.SetBool("Moving", true);
+        }
+
         vel *= new Vector2(speed, speed);
         rg.linearVelocity = vel;
     }

@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private GameObject m_HealthBar;
     [SerializeField]
     private float m_CameraFollowDelay = 0.1f;
+    [SerializeField]
+    private AudioClip[] sounds;
 
     private float m_DodgeDelay = 2f;
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     private InputAction m_ShootAction;
 
     private Rigidbody2D m_Rb;
+    private AudioSource m_AudioSource;
     private Vector2 m_VecMvmt;
     private Weapon m_Weapon;
     private bool m_ShouldFire;
@@ -71,6 +74,7 @@ public class Player : MonoBehaviour
         m_Health = m_MaxHealth;
         m_Rb = GetComponent<Rigidbody2D>();
         m_Weapon = GetComponent<Weapon>();
+        m_AudioSource = GetComponent<AudioSource>();
         m_ShouldFire = false;
         onPlayerDeath ??= new();
         m_Animator = GetComponent<Animator>();
@@ -82,6 +86,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (m_Animator.GetBool("isMoving") && !m_AudioSource.isPlaying)
+        {
+            string audio =  "footsteps " +  Random.Range(1, 3);
+            m_AudioSource.resource = sounds[Random.Range(0, sounds.Length)];
+            m_AudioSource.Play();
+        }
+
         if (isInvincible && m_DodgeTimer >= (m_DodgeDelay / 4) ) {
             isInvincible = false;
         }

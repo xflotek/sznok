@@ -30,13 +30,11 @@ public class Enemy : MonoBehaviour
         if (rg.linearVelocity == new Vector2(0f, 0f) && attack_timer > attack_cooldown)
         {
             attack_timer = 0f;
-            print("Attack");
-
-            //player.GetComponent</*Nazwa skryptu*/>().ReciveDamage(damage);
+            player.GetComponent<Player>().ReceiveDamage(damage);
         }
     }
 
-    public void ReciveDamage(float damage)
+    public void ReceiveDamage(float damage)
     {
         health -= damage;
         if (health < 0f)

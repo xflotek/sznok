@@ -172,12 +172,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5151515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3434343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7711606996498491915, guid: 079ba7a5e1efadc449df9542a81835c7, type: 3}
+    - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
       propertyPath: m_SortingLayerID
       value: 1806344617
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799877676497090710, guid: 56f810042a115b249a214f29b4424f39, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

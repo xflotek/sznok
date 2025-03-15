@@ -132,6 +132,10 @@ public class Player : MonoBehaviour
                             break;
                         }
                     }
+                    if (StaticData.shards[2] == true)
+                    {
+                        SceneManager.LoadScene("end");
+                    }
                 }
             }
         }

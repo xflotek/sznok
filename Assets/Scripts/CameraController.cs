@@ -2,37 +2,22 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject Target;
+    public float CameraSpeed;
     public Camera TargetCamera;
-    public Vector2[] CameraPositions = {new (0f,0f)};
-    public float CameraSpeed = 4f;
-
-    public Vector2 TargetPosition;
-    
-    public bool MoveTo(int index) {
-        if (index < CameraPositions.Length) {
-            TargetPosition = CameraPositions[index];
-            return true;
-        }
-        return false;
-    }
 
     void Start()
     {
-        TargetPosition = CameraPositions[0];
         TargetCamera = Camera.main;
-    }
+        Target = gameObject;
+    } 
 
     void Update()
     {
-        Vector2 distance = new(
-            TargetPosition.x - TargetCamera.transform.position.x,
-            TargetPosition.y - TargetCamera.transform.position.y
-        );
-
-        TargetCamera.transform.position += new Vector3(
-            distance.x * Time.deltaTime * CameraSpeed,
-            distance.y * Time.deltaTime * CameraSpeed,
-            0
+        TargetCamera.transform.position = new Vector3(
+            Target.transform.position.x,
+            Target.transform.position.y,
+            TargetCamera.transform.position.z
         );
     }
 }

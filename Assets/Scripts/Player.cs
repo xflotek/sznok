@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     private Vector3 m_DefaultScale = new(1.5f, 1.5f, 1f);
     [SerializeField]
     private GameObject m_HealthBar;
+    [SerializeField]
+    private float m_CameraFollowDelay = 0.1f;
+    private float m_CameraFollowTimer;
+
     private float m_DodgeDelay = 2f;
 
     private Vector3 m_MoveLeft = new(-1, 1, 1);
@@ -82,8 +86,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        m_DodgeTimer += Time.deltaTime;
-
         if (isInvincible && m_DodgeTimer >= (m_DodgeDelay / 4) ) {
             isInvincible = false;
         }
@@ -145,7 +147,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        m_Rb.linearVelocity += m_VecMvmt * m_MovementSpeed;
+        transform.position += (Vector3)m_VecMvmt * m_MovementSpeed;
 
         if (m_ShouldFire) {
             

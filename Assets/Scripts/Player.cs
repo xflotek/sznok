@@ -178,11 +178,6 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        for (int i = 0; i < 3; i++)
-        {
-            print(StaticData.shards[i]);
-        }
-
         if (other.gameObject.CompareTag("lvl1"))
         {
             popup1.SetActive(true);

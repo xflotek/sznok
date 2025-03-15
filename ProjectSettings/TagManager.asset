@@ -20,8 +20,8 @@ TagManager:
   - 
   - 
   - Pickable
-  - 
-  - 
+  - Bullets
+  - Enemies
   - 
   - 
   - 
@@ -46,6 +46,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2182621235
+    locked: 0
+  - name: Middleground
+    uniqueID: 1806344617
+    locked: 0
+  - name: Foreground
+    uniqueID: 2379751561
     locked: 0
   m_RenderingLayers:
   - Default

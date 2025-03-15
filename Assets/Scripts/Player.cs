@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isInvincible);
         m_DodgeTimer += Time.deltaTime;
 
         if (isInvincible && m_DodgeTimer >= (m_DodgeDelay / 4) ) {

@@ -11,10 +11,13 @@ public class Enemy : MonoBehaviour
     private float attack_timer = 0f;
 
     private Rigidbody2D rg;
+    private Animator anim;
     private GameObject player;
+    
     void Start()
     {
         rg = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
     }
 
@@ -30,14 +33,19 @@ public class Enemy : MonoBehaviour
         if (rg.linearVelocity == new Vector2(0f, 0f) && attack_timer > attack_cooldown)
         {
             attack_timer = 0f;
+            anim.SetBool("Attack", true);
             player.GetComponent<Player>().ReceiveDamage(damage);
+        }
+        else
+        {
+            anim.SetBool("Attack", false);
         }
     }
 
     public void ReceiveDamage(float damage)
     {
         health -= damage;
-        if (health < 0f)
+        if (health <= 0f)
         {
             Destroy(rg.gameObject);
         }

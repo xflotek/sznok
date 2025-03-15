@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEditor.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector3 m_DefaultScale = new(1.5f, 1.5f, 1f);
     [SerializeField]
+    private GameObject m_HealthBar;
     private float m_DodgeDelay = 2f;
 
     private Vector3 m_MoveLeft = new(-1, 1, 1);
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour
                 onPlayerDeath.Invoke();
             }
         }
+        m_HealthBar.GetComponent<HealthBar>().curr = (int)m_Health;
     }
 
     void Start()

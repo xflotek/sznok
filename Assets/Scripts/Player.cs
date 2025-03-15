@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private float m_MovementSpeed = 1f;
     [SerializeField]
     private Vector3 m_DefaultScale = new(1.5f, 1.5f, 1f);
+    [SerializeField]
+    private float m_DodgeDelay = 2f;
 
     private Vector3 m_MoveLeft = new(-1, 1, 1);
     private Vector3 m_MoveRight = new(1, 1, 1);
@@ -21,18 +23,24 @@ public class Player : MonoBehaviour
     private Weapon m_Weapon;
     private bool m_ShouldFire;
     private Animator m_Animator;
+    private float m_DodgeTimer;
+    private bool m_CanDodge;
 
     public float m_LastDirection;
     public GameObject pickable;
     
     public static UnityEvent onPlayerDeath;
 
+    public bool isInvincible;
+
     public void ReceiveDamage(float damage) {
-        if (m_Health - damage > 0) {
-            m_Health -= damage;
-        } else {
-            m_Health = 0;
-            onPlayerDeath.Invoke();
+        if (!isInvincible) {
+            if (m_Health - damage > 0) {
+                m_Health -= damage;
+            } else {
+                m_Health = 0;
+                onPlayerDeath.Invoke();
+            }
         }
     }
 
@@ -46,10 +54,25 @@ public class Player : MonoBehaviour
         onPlayerDeath ??= new();
         m_Animator = GetComponent<Animator>();
         transform.localScale = m_DefaultScale;
+        isInvincible = false;
+        m_CanDodge = true;
+        m_DodgeTimer = 0;
     }
 
     void Update()
     {
+        Debug.Log(isInvincible);
+        m_DodgeTimer += Time.deltaTime;
+
+        if (isInvincible && m_DodgeTimer >= (m_DodgeDelay / 4) ) {
+            isInvincible = false;
+        }
+
+        if (m_DodgeTimer >= m_DodgeDelay) {
+            m_DodgeTimer = 0;
+            m_CanDodge = true;
+        }
+
         m_VecMvmt = m_MoveAction.ReadValue<Vector2>();
 
         if (m_VecMvmt.x != 0 || m_VecMvmt.y != 0) {
@@ -71,6 +94,15 @@ public class Player : MonoBehaviour
                 {
                     pickable = null;
                 }
+            }
+        }
+
+        if (Keyboard.current.ctrlKey.ReadValue() > 0) {
+            if (m_CanDodge) {
+                isInvincible = true;
+                m_Animator.SetTrigger("Dodge");
+                m_CanDodge = false;
+                m_DodgeTimer = 0;
             }
         }
 

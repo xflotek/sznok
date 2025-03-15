@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - lvl1
+  - lvl2
+  - lvl3
+  - koniec
   - Enemy
   - WeaponTarget
   layers:

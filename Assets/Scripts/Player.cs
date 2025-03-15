@@ -122,6 +122,14 @@ public class Player : MonoBehaviour
                 if (pickable.GetComponent<Pickable>().PickUp())
                 {
                     pickable = null;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (StaticData.shards[i] == false)
+                        {
+                            StaticData.shards[i] = true;
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -170,6 +178,11 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        for (int i = 0; i < 3; i++)
+        {
+            print(StaticData.shards[i]);
+        }
+
         if (other.gameObject.CompareTag("lvl1"))
         {
             popup1.SetActive(true);
@@ -177,18 +190,39 @@ public class Player : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("lvl2"))
         {
-            popup2.SetActive(true);
-            scena = "lvl2";
+            if (StaticData.shards[0])
+            {
+                popup2.SetActive(true);
+                scena = "lvl2";
+            }
+            else
+            {
+                popup4.SetActive(true);
+            }
         }
         else if (other.gameObject.CompareTag("lvl3"))
         {
-            popup3.SetActive(true);
-            scena = "lvl3";
+            if (StaticData.shards[1])
+            {
+                popup3.SetActive(true);
+                scena = "lvl3";
+            }
+            else
+            {
+                popup4.SetActive(true);
+            }
         }
         else if (other.gameObject.CompareTag("koniec"))
         {
-            popup4.SetActive(true);
-            scena = "koniec";
+            if (StaticData.shards[2])
+            {
+                popup4.SetActive(true);
+                scena = "koniec";
+            }
+            else
+            {
+                popup4.SetActive(true);
+            }
         }
     }
 }

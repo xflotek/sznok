@@ -9,6 +9,11 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private GameObject m_ParticleExplosionReference;
 
+    [SerializeField]
+    private float m_MaximumLifetime = 4f;
+
+    private float m_LifetimeTimer;
+
     private Vector2 m_Direction;
     private Rigidbody2D m_Rb;
 
@@ -18,6 +23,15 @@ public class Bullet : MonoBehaviour
             m_Direction.Normalize();
             m_Rb = GetComponent<Rigidbody2D>();
             m_Rb.linearVelocity = m_Direction * m_Speed;
+            m_LifetimeTimer = 0;
+    }
+
+    void Update()
+    {
+        m_LifetimeTimer += Time.deltaTime;
+        if (m_LifetimeTimer >= m_MaximumLifetime) {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

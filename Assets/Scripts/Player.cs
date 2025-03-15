@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using UnityEditor.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -18,7 +16,6 @@ public class Player : MonoBehaviour
     private GameObject m_HealthBar;
     [SerializeField]
     private float m_CameraFollowDelay = 0.1f;
-    private float m_CameraFollowTimer;
 
     private float m_DodgeDelay = 2f;
 
@@ -70,7 +67,6 @@ public class Player : MonoBehaviour
         m_PickUpAction = InputSystem.actions.FindAction("PickUp");
         m_DodgeAction  = InputSystem.actions.FindAction("Dodge");
         m_ShootAction  = InputSystem.actions.FindAction("Shoot");
-
 
         m_Health = m_MaxHealth;
         m_Rb = GetComponent<Rigidbody2D>();

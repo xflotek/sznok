@@ -159,7 +159,6 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //movespeed = 0f;
         Time.timeScale = 0f;
 
         if (other.gameObject.CompareTag("lvl1"))

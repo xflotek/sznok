@@ -31,13 +31,14 @@ public class pausemenu : MonoBehaviour
     }
     public void resumegame()
     {
-        pause.SetActive(false);
         Time.timeScale = 1f;
+        pause.SetActive(false);
         ispaused = false;
     }
 
     public void restartgame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 }

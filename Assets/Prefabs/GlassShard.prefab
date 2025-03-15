@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4390814133264116094}
   - component: {fileID: 8726027254673410232}
   m_Layer: 8
-  m_Name: Pickable
+  m_Name: GlassShard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.88383836, y: 1.449495}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59e7878b77946743952c0a0bf271bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glass: 1
 --- !u!61 &8726027254673410232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.88383836, y: 1.449495}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 0.88383836, y: 1.449495}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

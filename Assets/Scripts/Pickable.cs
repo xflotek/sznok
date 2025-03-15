@@ -1,8 +1,11 @@
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Pickable : MonoBehaviour
 {
+    [SerializeField] private bool glass;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -21,8 +24,17 @@ public class Pickable : MonoBehaviour
 
     public bool PickUp()
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
-        return true;
+        if (glass)
+        {
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1f;
+            return true;
+        }
+        else
+        {
+            Destroy(gameObject);
+            print("textbox");
+            return true;
+        }
     }
 }

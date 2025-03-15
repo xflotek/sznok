@@ -108,6 +108,7 @@ MonoBehaviour:
   m_MaxHealth: 100
   m_MovementSpeed: 2.97
   m_DefaultScale: {x: 1.5, y: 1.5, z: 1}
+  m_UI: {fileID: 5178160509589434446, guid: dbdedc309272a28449b4f6c61b986740, type: 3}
   m_LastDirection: 0
   pickable: {fileID: 0}
 --- !u!114 &1771725957859002293

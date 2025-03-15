@@ -17,7 +17,12 @@ public class Player : MonoBehaviour
 
     private Vector3 m_MoveLeft = new(-1, 1, 1);
     private Vector3 m_MoveRight = new(1, 1, 1);
+
     private InputAction m_MoveAction;
+    private InputAction m_DodgeAction;
+    private InputAction m_PickUpAction;
+    private InputAction m_ShootAction;
+
     private Rigidbody2D m_Rb;
     private Vector2 m_VecMvmt;
     private Weapon m_Weapon;
@@ -46,7 +51,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        m_MoveAction = InputSystem.actions.FindAction("move");
+        m_MoveAction   = InputSystem.actions.FindAction("Move");
+        m_PickUpAction = InputSystem.actions.FindAction("PickUp");
+        m_DodgeAction  = InputSystem.actions.FindAction("Dodge");
+        m_ShootAction  = InputSystem.actions.FindAction("Shoot");
+
+
         m_Health = m_MaxHealth;
         m_Rb = GetComponent<Rigidbody2D>();
         m_Weapon = GetComponent<Weapon>();
@@ -82,11 +92,11 @@ public class Player : MonoBehaviour
             m_Animator.SetBool("isMoving", false);
         }
 
-        if (Keyboard.current.fKey.ReadValue() > 0) {
+        if (m_ShootAction.ReadValue<float>() > 0) {
             m_ShouldFire = true;
         }
 
-        if (Keyboard.current.qKey.ReadValue() > 0)
+        if (m_PickUpAction.ReadValue<float>() > 0)
         {
             if (pickable != null)
             {
@@ -97,7 +107,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.ctrlKey.ReadValue() > 0) {
+        if (m_DodgeAction.ReadValue<float>() > 0) {
             if (m_CanDodge) {
                 isInvincible = true;
                 m_Animator.SetTrigger("Dodge");
